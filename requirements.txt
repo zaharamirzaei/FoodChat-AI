@@ -1,0 +1,16 @@
+pydantic
+langchain
+langchain-core
+langchain-openai
+langchain-huggingface
+langchain-community
+langgraph
+lancedb
+llama-parse
+langchain-tavily
+python-Levenshtein
+python-dotenv
+requests
+tiktoken
+uvicorn
+SQLAlchemy
