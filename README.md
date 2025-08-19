@@ -31,3 +31,16 @@ The project demonstrates modular chatbot design where the main LLM agent dynamic
 ---
 
 ## 🏗️ Project Structure
+FoodChat-AI/
+├── modules/
+│   ├── food_info.py         # Handles food & nutrition info
+│   ├── food_services.py     # Customer service tasks (order tracking, cancel, feedback)
+│   └── food_suggestion.py   # Suggests foods based on user input
+├── router/
+│   └── module_identifier.py # Decides which module to call for a query
+├── db_manager.py            # Simple DB interface for orders & menus
+├── main.py                  # Entry point: LLM orchestrates module calls
+├── requirements.txt         # Python dependencies
+├── .env.example             # Environment variables template
+├── The New Complete Book of Foods.pdf # Reference dataset
+└── .gitignore
