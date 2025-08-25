@@ -121,8 +121,6 @@ This will start a local web interface at [http://localhost:8000](http://localhos
 
 Here’s a screenshot of the new Chainlit-based chat interface:  
 
-*(Make sure to create an `assets/` folder and put your screenshot inside it as `chat_ui_preview.png`)*  
-
 ```markdown
 ![Chat UI Preview](assets/chainlit.png)
 ```
