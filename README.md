@@ -122,7 +122,7 @@ This will start a local web interface at [http://localhost:8000](http://localhos
 Here’s a screenshot of the new Chainlit-based chat interface:  
 
 ```markdown
-![Chat UI Preview](https://github.com/zaharamirzaei/FoodChat-AI/blob/main/assets/chainlit.png?raw=true)
+![Chat UI Preview](https://raw.githubusercontent.com/zaharamirzaei/FoodChat-AI/main/assets/chainlit.png)
 ```
 
 ---
