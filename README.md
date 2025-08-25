@@ -1,6 +1,6 @@
 # FoodChat-AI 🍴🤖
 
-**FoodChat-AI** is an intelligent chatbot prototype designed as part of a course project. It leverages **Large Language Models (LLMs)** along with **LangChain** and **LangGraph** to handle user queries in different domains of a food-assistant application.  
+**FoodChat-AI** is an intelligent chatbot prototype designed as part of a course project. It leverages **Large Language Models (LLMs)** along with **LangChain**, **LangGraph**, and now **Chainlit** to handle user queries in different domains of a food-assistant application.  
 
 The project demonstrates modular chatbot design where the **main LLM agent** dynamically routes user queries to specialized modules (e.g., food info, customer services, food search, and food suggestions).  
 
@@ -28,9 +28,15 @@ The project demonstrates modular chatbot design where the **main LLM agent** dyn
 - **Food Suggestions**  
   Provides intelligent meal recommendations based on user preferences using reflection-like reasoning.  
 
+- **Interactive Chat UI (via Chainlit)**  
+  A modern chat interface where:  
+  - Modules are dynamically selected  
+  - Customer services can handle multi-turn conversations  
+  - Users can exit modules manually with commands like `exit`, `quit`, `bye`, etc.  
+
 ---
 
-## 🏗️ Project Structure
+## 🏗 Project Structure
 
 ```
 FoodChat-AI/
@@ -42,6 +48,7 @@ FoodChat-AI/
 │   └── module_identifier.py # Decides which module to call for a query
 ├── db_manager.py            # Simple DB interface for orders & menus
 ├── main.py                  # Entry point: LLM orchestrates module calls
+├── chat_ui.py               # Chainlit interface for interactive chat UI
 ├── requirements.txt         # Python dependencies
 ├── .env.example             # Environment variables template
 ├── The New Complete Book of Foods.pdf # Reference dataset
@@ -96,9 +103,28 @@ The chatbot won’t run without valid API keys.
 
 ## ▶️ Running the Project
 
-Run the chatbot with:  
+### 🔹 CLI Mode (original)
 ```bash
 python main.py
+```
+
+### 🔹 Chat UI Mode (new)
+Run with Chainlit:
+```bash
+chainlit run chat_ui.py -w
+```
+This will start a local web interface at [http://localhost:8000](http://localhost:8000).  
+
+---
+
+## 🖼 Chat UI Preview
+
+Here’s a screenshot of the new Chainlit-based chat interface:  
+
+*(Make sure to create an `assets/` folder and put your screenshot inside it as `chat_ui_preview.png`)*  
+
+```markdown
+![Chat UI Preview](assets/chat_ui_preview.png)
 ```
 
 ---
@@ -108,7 +134,7 @@ python main.py
 1. The user sends a query.  
 2. `module_identifier.py` analyzes the query and decides which module should handle it.  
 3. The chosen module (`food_info`, `food_services`, or `food_suggestion`) processes the request.  
-4. The result is passed back to the main agent and returned to the user.  
+4. The result is passed back to the main agent (or UI) and returned to the user.  
 
 ---
 
@@ -116,6 +142,7 @@ python main.py
 
 - **Python 3.10+**
 - **LangChain / LangGraph**
+- **Chainlit** (for chat UI)
 - **LLM APIs** (e.g., Gemini 1.5 Flash, GPT models)
 - **SQLite** (for simple DB management)
 
@@ -126,3 +153,10 @@ python main.py
 - No model fine-tuning is required.  
 - The project focuses on **modular chatbot architecture** and **agent-based reasoning**.  
 - Food data is partially sourced from `The New Complete Book of Foods.pdf`.  
+
+---
+
+## 📜 License
+
+This project is for **educational purposes only**.  
+Feel free to fork and experiment with it.  
