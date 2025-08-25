@@ -129,10 +129,12 @@ Here’s a screenshot of the new Chainlit-based chat interface:
 
 ## 🔍 How It Works
 
-1. The user sends a query.  
+1. The user sends a query via the Chainlit chat UI.
 2. `module_identifier.py` analyzes the query and decides which module should handle it.  
 3. The chosen module (`food_info`, `food_services`, or `food_suggestion`) processes the request.  
-4. The result is passed back to the main agent (or UI) and returned to the user.  
+4. **RAG (Retrieval-Augmented Generation)** is used in relevant modules to fetch knowledge from the PDF or other data sources
+5. A **ReAct** agent handles reasoning and action planning across modules.
+6. The result is passed back to the main agent (or UI) and returned to the user.  
 
 ---
 
@@ -141,6 +143,8 @@ Here’s a screenshot of the new Chainlit-based chat interface:
 - **Python 3.10+**
 - **LangChain / LangGraph**
 - **Chainlit** (for chat UI)
+- **ReAct agent** (reasoning + action in LangChain)
+- **RAG** (Retrieval-Augmented Generation) for food knowledge retrieval
 - **LLM APIs** (e.g., Gemini 1.5 Flash, GPT models)
 - **SQLite** (for simple DB management)
 
